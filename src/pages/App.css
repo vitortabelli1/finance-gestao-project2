@@ -1,0 +1,904 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* Adicione um gradiente vertical de azul para branco */
+  height: 100vh;
+  padding: 20px;
+  overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+  background-color: rgb(216, 231, 243);
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+
+
+/* Media query para ajustar para o iPhone 12 */
+@media (max-width: 1170px) {
+  html {
+    font-size: 14px; /* Altere o tamanho da fonte conforme necessário */
+  }
+}
+
+@media (max-width: 414px) {
+  html {
+    font-size: 10px; /* Tamanho da fonte para dispositivos móveis menores */
+  }
+}
+
+
+.text-night {
+  color: white;
+}
+/* Estilos para telas grandes */
+.add-expense {
+  display: flex;
+  align-items: center;
+  border: 4px solid #333433;
+  padding: 10px;
+  border-radius: 7px;
+  background-color: #131212;
+  margin: 10px;
+  width: 1700px;
+}
+
+.add-expense input[type="number"],
+.add-expense input[type="text"],
+.add-expense select {
+  padding: 13px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+
+
+.add-expense input[type="date"] {
+  margin-top:7px;
+  padding: 13px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+.add-expense select{
+  margin-top:4px;
+}
+/* Media query para telas menores, como o iPhone 12 */
+@media only screen and (max-width: 849px) { /* A largura do iPhone 12 é de 844 pixels em modo paisagem */
+  .add-expense {
+    display: block; /* Altera para o layout de bloco */
+    width: 500px; /* Define a largura automática para ocupar o espaço disponível */
+   padding:20px;
+   margin-left: -10px;
+    
+  }
+
+  .add-expense input[type="number"],
+  .add-expense input[type="text"] {
+  padding: 13px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+  
+.add-expense select {
+  text-align: center;
+ 
+  margin-left: 20px;
+}
+.add-expense input[type="date"] {
+  margin-top:10px;
+  padding: 18px;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  margin-left: 50px;
+}
+
+
+}
+
+@media only screen and (max-width: 849px) {
+  /* ... outros estilos ... */
+
+  .button-add  {
+    /* Outros estilos */
+
+    margin-left: 75px;
+    padding: 30px;
+    font-size: 8px;
+  }
+}
+
+
+
+.valorAGuardar{
+
+  margin-left: -800px;
+}
+
+.valor-container > * {
+  margin-right: 20px;
+}
+
+.labl
+
+.valor-container label {
+  vertical-align: top;
+  border-radius: 5px; /* Adicione bordas arredondadas às etiquetas */
+
+  padding: 5px; /* Adicione preenchimento para espaçamento interno nas etiquetas */
+}
+.modo-button{
+  margin-left: 10px;
+  
+}
+
+.add-expense > * {
+  margin-right: 20px;
+}
+
+.add-expense label {
+  vertical-align: top;
+  border-radius: 5px; /* Adicione bordas arredondadas às etiquetas */
+  margin-left: 70px;
+  padding: 5px; /* Adicione preenchimento para espaçamento interno nas etiquetas */
+  color: white;
+  
+}
+
+
+
+.add-expense button {
+  display: block;
+}
+
+.saldo-total-input,
+.description-input,
+.value-input {
+ 
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+
+.value-to-save-input{
+  margin-left: 20px;
+  margin-top: 18px;
+}
+
+.popup {
+  display: block;
+  position: absolute;
+  background-color: rgb(16, 16, 16);
+  border: 1px solid #262525;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  top: 35px;
+  right: 0;
+  min-width: 120px;
+  margin-right: 60px;
+  margin-top:15px;
+}
+
+.popup a {
+  display: block;
+  padding: 8px 12px;
+  color: #dcd8d8;
+  text-decoration: none;
+}
+
+.popup a:hover {
+  background-color: #3d3b3b;
+}
+.popup-content{
+  margin-left: 300px;
+  border:2px solid black;
+  margin-top: 90px;
+}
+.menu-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(16, 16, 16);
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajuste conforme necessário para centralizar verticalmente na altura da tela */
+  margin-left: 590px;
+  padding: 50px;
+}
+
+.navigation{
+  display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f2f2f2;
+      padding: 20px 0;
+}
+
+.navigation-links {
+  display: flex;
+  gap: 20px; /* Espaçamento entre os links */
+}
+.navigation-links a {
+  text-decoration: none;
+  color: inherit; /* Opcional: mantém a cor padrão do texto */
+}
+
+.navigation-links a:hover {
+  text-decoration: underline; /* Opcional: Adiciona sublinhado no hover */
+}
+.icon-buttons {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-money{
+  font-size: 25px; /* ou o tamanho desejado */
+  margin-top: 20px;
+  color: rgb(170, 168, 168);
+}
+.icon-dashboard {
+  font-size: 25px; /* ou o tamanho desejado */
+  margin-top: 20px;
+  color: rgb(170, 168, 168);
+}
+
+.icon-star {
+  font-size: 20px; /* ou o tamanho desejado */
+  margin-top: 20px; /* ou a margem desejada */
+  color: rgb(170, 168, 168);;
+}
+
+.icon-calendar {
+  font-size: 20px; /* ou o tamanho desejado */
+  margin-top: 20px; /* ou a margem desejada */ 
+  color: rgb(170, 168, 168);
+}
+.menu-button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.bar {
+  background: rgb(255, 255, 255);
+  width: 30px;
+  height: 3px;
+  margin: 3px 0;
+  transition: transform 0.3s;
+}
+
+.bar.open:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.bar.open:nth-child(2) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.label {
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  padding: 10px 20px; /* Aumente o espaço interno para ajustar o tamanho do botão */
+  background-color: #696980db;
+  color: #fff;
+  border: none;
+  border-radius: 54px;
+  margin-top: 10px;
+  margin-right:1300px;
+  cursor: pointer;
+}
+
+.button-add button {
+  padding: 20px 40px; /* Ajuste o espaço interno para alterar o tamanho do botão */
+  color: #fff;
+  border: none;
+  margin-left: 60px;
+  margin-top: 6px;
+  border-radius: 50px; /* Ajuste o raio do canto para alterar a forma */
+  background-color: #4453c2; /* Cor de fundo do botão */
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-size: 19px; /* Tamanho da fonte */
+}
+
+
+
+button:hover {
+  background-color: #6ba3d1;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.add-expense-container {
+  margin-top: 90px;
+  margin-left: 100px;
+  display: inline-block;
+  justify-content: flex-start; /* Alinhe à esquerda */
+
+}
+.container-add{
+  display: inline-flex;
+ padding: -20px;
+  margin-top: -25px;
+  margin-left: 200px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinhe à esquerda */
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 0 auto;
+  width: 80%;
+  background-color: #f9f9f9;
+}
+
+.table {
+  width: 280px;
+  height: 180px;
+  border: 2px solid #000;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.table-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-color: black;
+  margin-top: 2px;
+  padding: 20px;
+  width: 230px;
+}
+
+
+
+.table h2 {
+  font-size: 16px;
+  margin-top: -4px;
+}
+
+.table2 {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 80%;
+  padding: 20px;
+  margin-top: -700px;
+  margin-left: 165px;
+}
+
+.table2 table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table2 th,
+.table2 td {
+  padding: 8px;
+  border: 2px solid #090909;
+  text-align: left; /* Alinhe o texto à esquerda nas células */
+  background-color: rgb(252, 250, 250);;
+}
+
+.table2 th {
+  background-color: #1c1d1f;
+  color: rgb(198, 202, 198);
+  margin-bottom: 40px;
+}
+
+/* Estilos gerais fora da media query */
+
+@media only screen and (max-width: 849px) {
+  /* Media query para telas menores, como o iPhone 12 */
+
+  .table-container {
+    width: 100%; /* Define a largura total para ocupar o espaço disponível */
+  }
+
+  .table {
+    width: 100%; /* Define a largura total para ocupar o espaço disponível */
+    margin: 10px 0; /* Adiciona margem superior e inferior */
+  }
+
+  .table-wrapper {
+    width: 100%; /* Define a largura total para ocupar o espaço disponível */
+  }
+
+  .table2 {
+    width: 80%; /* Define a largura total para ocupar o espaço disponível */
+    margin-top: -800px; /* Ajuste conforme necessário para a posição */
+    margin-left: auto; /* Centraliza a tabela na largura disponível */
+  }
+
+  .table2 th {
+    margin-bottom: 10px; /* Ajuste conforme necessário para a margem inferior */
+  }
+}
+
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 900px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px; /* Ajuste a largura máxima conforme necessário */
+}
+
+.chart h4 {
+  text-align: center;
+}
+
+
+.chart-and-info {
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 25%;
+  margin-top: -250px;
+  margin-left: 30px; 
+  padding:60px;
+ 
+}
+
+@media only screen and (max-width: 849px) { /* Largura do iPhone 12 em modo paisagem */
+  
+  .chart-and-info {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 33%;
+    margin-top: 200px;
+    margin-left: 30px; 
+    padding:60px;
+   
+  }
+}
+
+
+.chart-and-info2 {
+  display:inline-block;
+  flex-wrap: wrap;
+  margin-top: 180px;
+}
+
+body {
+  background-color: #fff; /* Cor de fundo padrão (claro) */
+  color: #333; /* Cor do texto padrão (claro) */
+}
+
+/* Estilos para o modo noturno */
+body.dark-mode {
+  background-color: #1b2023; /* Cor de fundo para o modo noturno */
+  color: #fff; /* Cor do texto para o modo noturno */
+}
+
+#alternar-modo-noturno {
+  background-color: #000; /* Cor de fundo para o botão */
+  color: #fff; /* Cor do texto para o botão */
+  margin-right:4000px;
+  padding: 10px 20px; /* Espaçamento interno para o botão */
+  border: none; /* Remova a borda do botão */
+  cursor: pointer;
+}
+
+
+
+.body-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.chart {
+  display:block;
+  align-items: center;
+  justify-content: space-around;
+  width: 450px;
+  margin-top: -830px;
+  margin-left: 1250px; 
+ 
+  box-shadow: 0 4px 20px rgba(253, 253, 253, 0.9); /* Adiciona uma sombra suave */
+  transition: transform 0.3s ease-in-out, box-shadow 0.5s ease-in-out; 
+}
+
+@media only screen and (max-width: 849px) { /* Largura do iPhone 12 em modo paisagem */
+  .chart {
+    max-width: 90%; /* Defina a largura para ocupar toda a largura disponível */
+    height: auto;
+    margin:auto;
+    margin-top: -30px; /* Ajuste o espaçamento superior para telas menores */
+    margin-left: 100px; /* Ajuste a posição para a esquerda para telas menores */
+    padding: 30px;
+    box-shadow: none; /* Remova a sombra para telas menores */
+    transition: none; /* Remova a transição para telas menores */
+  }
+  .charts-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+
+.chart-bar{
+  margin-top:-500px;
+  margin-left: 300px;
+}
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width:60%;
+  margin-top: 190px;
+  margin-left: 650px; /* Alinhe à direita */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+  border-radius: 5px;
+  padding: 65px;
+  max-width:300px;
+}
+
+.info2 {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -40px;
+  margin-left: 1380px; /* Alinhe à direita */
+  border: 2px solid #eeecec;
+  max-width:250px;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.fundo-div{
+  background:rgb(254, 254, 254);
+  margin-top:-900px;
+  margin-left:80px;
+  max-width: 3000px;
+  width: 310px; /* Mesma largura e altura */
+  padding:160px;
+  height: 50px; /* Mesma largura e altura */
+  border: 4px solid rgb(192, 191, 191);
+
+}
+
+.fundo-div2{
+  background:rgb(254, 254, 254);
+  margin-top:80px;
+  margin-left:80px;
+  max-width: 3000px;
+  width: 310px; /* Mesma largura e altura */
+  padding:160px;
+  height: 50px; /* Mesma largura e altura */
+  border: 4px solid rgb(192, 191, 191);
+
+}
+
+.chart-pizza {
+  max-width: 900px; /* Defina uma largura máxima para o gráfico */
+  width: 100%; /* Faça com que o gráfico ocupe toda a largura disponível */
+  margin-left: 300px;
+  margin-top:-1750px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(253, 253, 253, 0.9); /* Adiciona uma sombra suave */
+  transition: transform 0.3s ease-in-out, box-shadow 0.5s ease-in-out; 
+  display:block;
+ 
+}
+@media only screen and (max-width: 844px) { /* Largura do iPhone 12 em modo paisagem */
+  .chart-pizza {
+    max-width: 100%; /* Redefine a largura máxima para ocupar toda a largura disponível */
+    margin-right:50px; /* Move o gráfico um pouco para a esquerda */
+    margin-top: -2500px;
+   
+  }
+}
+
+
+.google-account-comments{
+  margin-left: 500px;
+}
+
+
+.chart-pizza h4 {
+   margin-left: 100px;
+  justify-content: center; /* Centralize o conteúdo horizontalmente */
+  align-items: center; /* Centralize o conteúdo verticalmente */
+
+}
+
+.container-chart{
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+.info-container{
+  margin-top: 200px;
+}
+.saldo-disponivel, .total-despesas {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-right: 1px solid #ccc; /* Adiciona uma borda à direita entre as informações */
+}
+
+.saldo-disponivel::before, .total-despesas::before {
+  content: " ";
+  width: 50px; /* Largura do círculo */
+  height: 50px; /* Altura do círculo */
+  background: #e5eaef; /* Cor do círculo */
+  border-radius: 50%; /* Transforma em um círculo */
+  color: white; /* Cor do texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px; /* Tamanho do número */
+  margin-bottom: 5px;
+}
+
+/* Remova o conteúdo dos círculos (opcional) */
+.saldo-disponivel::before {
+  content: " ";
+}
+
+.total-despesas::before {
+  content: " ";
+}
+
+.saldo-disponivel span, .total-despesas span {
+  font-size: 24px; /* Tamanho do número */
+  font-weight: bold;
+}
+.saldo-disponivel,
+.total-despesas {
+  margin: 10px; /* Ajuste a margem conforme necessário */
+}
+
+.saldo-disponivel p,
+.total-despesas p {
+  margin: 0; /* Remova a margem superior dos parágrafos */
+}
+
+.saldo-disponivel span,
+.total-despesas span {
+  margin-left: 5px; /* Adicione um espaçamento entre o rótulo e o valor */
+}
+/* Estilos para o cabeçalho customizado */
+.header-customizado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(16, 16, 16);
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.borda{
+  border:2px solid rgb(237, 233, 233);
+  margin-top: 0px;
+}
+
+.borda2{
+  
+  border:2px solid rgb(46, 44, 44);
+  margin-top: -200px;
+}
+
+
+.lines-across {
+  top: 110px;
+  left: 50%; /* Centraliza a linha horizontalmente */
+  transform: translateX(-50%); /* Ajusta a posição para o centro */
+  width: 2800px; /* Largura desejada */
+  margin-left: 800px;
+  max-width: calc(100% - 120px); /* Garante que a linha não ultrapasse a largura da janela */
+  background-color: #545353;
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Estilos para o logo */
+.header-customizado .logo {
+  font-size: 24px;
+  
+}
+
+.logo{
+  margin-left: 100px;
+}
+
+/* Estilos para o container dos ícones */
+.header-customizado .icons-container {
+  display: flex;
+  justify-content: flex-end; /* Alinha os ícones à direita */
+  align-items: center; /* Alinha os ícones verticalmente ao centro */
+  flex-grow: 1; /* Permite que os ícones ocupem o espaço disponível */
+  flex-direction: row-reverse; /* Inverte a direção dos ícones */
+  margin-left: 1430px;
+}
+
+/* Estilos para os ícones */
+.header-customizado .icon {
+  font-size: 20px;
+  margin-right: 10px; /* Espaço à direita entre os ícones */
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 844px) {
+  .header-customizado {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-customizado .logo {
+    margin-left: 50px; /* Ajuste conforme necessário para telas menores */
+    margin-bottom: 10px;
+  }
+
+  .header-customizado .icons-container {
+    margin-left: 620px; /* Ajuste conforme necessário para telas menores */
+    margin-top: -40px;
+  }
+
+  .header-customizado .icon {
+    margin-right: 12px; /* Remova a margem à direita para telas menores */
+    margin-bottom: 10px;
+  }
+}
+.savings-form{
+  margin-left:30px;
+  margin-top: 20px;
+  width: -10px;
+}
+.savings-container {
+  display: block;
+  border: 2px solid rgb(238, 236, 236); /* Reduzi o tamanho da borda para 2px */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+  margin-top: 100px;
+  margin-left:1390px;
+  max-width: 280px; /* Reduzi a largura máxima do container */
+  padding: 20px; /* Adicionei um espaço interno para o conteúdo */
+  border-radius: 8px; /* Adicionei um raio de borda para arredondar os cantos */
+}
+
+/* Dark mode azul escuro */
+.dark-mode-blue {
+  /* Defina os estilos para o modo escuro com tema azul */
+  background-color: #0a192f;
+  color: #c0c5ce;
+}
+
+/* Dark mode verde escuro */
+.dark-mode-green {
+  /* Defina os estilos para o modo escuro com tema verde */
+  background-color: #1d1f21;
+  color: #c5e478;
+}
+
+/* Dark mode cinza escuro */
+.dark-mode-gray {
+  /* Defina os estilos para o modo escuro com tema cinza */
+  background-color: #333333;
+  color: #dddddd;
+}
+
+
+.download-container {
+  display: flex;
+  justify-content: flex-end; /* Ajusta o alinhamento para a extremidade direita */
+  align-items: center;
+  margin-bottom: 20px; /* Espaçamento entre o botão e a tabela */
+}
+
+.download-button {
+  background-color: #191a1b;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  margin-right: 1280px; /* Ajuste o valor conforme necessário para movê-lo mais para a direita */
+  border-radius: 60px;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Centraliza o ícone e o texto verticalmente */
+}
+
+.download-button i {
+  margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+}
+
+.download-button:hover {
+  background-color: #3448ad;
+}
+
+@media only screen and (max-width: 849px) {
+  .download-container {
+    display: flex;
+    justify-content: flex-end; /* Ajusta o alinhamento para a extremidade direita */
+    align-items: center;
+    margin-bottom: 20px; /* Espaçamento entre o botão e a tabela */
+  }
+  
+  .download-button {
+    background-color: #191a1b;
+    color: white;
+    padding: 10px 20px;
+    font-size: 12px;
+    border: none;
+    margin-right: 390px; /* Ajuste o valor conforme necessário para movê-lo mais para a direita */
+    border-radius: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Centraliza o ícone e o texto verticalmente */
+  }
+  
+  .download-button i {
+    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+  }
+  
+  .download-button:hover {
+    background-color: #3448ad;
+  }
+}
